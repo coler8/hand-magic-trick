@@ -1,0 +1,77 @@
+<div class="bg">
+  <div class="clouds">
+    <div class="cloud"></div>
+    <div class="cloud alt bot"></div>
+  </div>
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+  <div class="planets">
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+    <div class="planet"></div>
+  </div>
+</div>
+
+<div class="unicorn-container">
+  <div class="unicorn">
+    <div class="header">
+      <div class="horn">
+        <div class="lines-container"></div>
+      </div>
+      <div class="head">
+        <div class="face">
+          <div class="pink"></div>
+          <div class="white"></div>
+        </div>
+        <div class="hair">
+          <div class="inner-hair"></div>
+        </div>
+      </div>
+      <div class="neck"></div>
+    </div>
+    <div class="body">
+      <div class="main"></div>
+      <div class="tail">
+        <div class="inner-tail"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg"></div>
+      <div class="leg"></div>
+      <div class="leg"></div>
+      <div class="leg"></div>
+    </div>
+  </div>
+</div>
+
+<div class="rainbow-container">
+  <ion-button (click)="openCamera()"
+    >Pulsa aquí &nbsp;<ion-icon name="camera"></ion-icon>
+  </ion-button>
+  <div class="rainbow"></div>
+</div>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" *ngFor="let photo of photos; index as position">
+      <ion-img [src]="photo.webviewPath"></ion-img>
+    </ion-col>
+  </ion-row>
+</ion-grid>
