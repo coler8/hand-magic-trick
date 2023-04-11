@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container" (click)="hideGif()">
+    <ion-img [src]="imagen"></ion-img>
+    <ion-img src="assets/stitch.gif" class="gif" *ngIf="showGif"></ion-img>
+  </div>
+</ion-content>

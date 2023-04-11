@@ -2,7 +2,7 @@
   "name": "hand-magic-trick",
   "version": "0.0.1",
   "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "homepage": "https://papelpandemia.firebaseapp.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -26,6 +26,7 @@
     "@capacitor/core": "4.7.3",
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.1",
+    "@capacitor/preferences": "^4.0.2",
     "@capacitor/status-bar": "4.1.1",
     "@ionic/angular": "^7.0.0",
     "canvas-confetti": "^1.6.0",

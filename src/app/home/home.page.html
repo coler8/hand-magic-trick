@@ -1,14 +1,74 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title> Magia </ion-title>
-  </ion-toolbar>
+  <ion-toolbar color="primary"> </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="container">
-    <h1 class="gradient-text" (click)="showConfetti()" id="my-canvas">
+    <h1 class="gradient-text" id="my-canvas">
       TRUCO DE MAGIA PARA LUCÍA Y MARI CARMEN
     </h1>
+
+    <ion-img src="assets/rabbit.gif" (click)="showConfetti()"></ion-img>
+
+    <div
+      style="
+        border-top: 1px solid rgb(194, 182, 182);
+        border-bottom: 1px solid rgb(177, 169, 169);
+      "
+    >
+      <ion-button
+        mode="ios"
+        style="display: flex; margin: 2rem"
+        (click)="openCamera()"
+        >Pulsa aquí &nbsp;<ion-icon name="camera"></ion-icon>
+      </ion-button>
+
+      <div class="custom-input-file ion-text-center">
+        <input
+          class="input-file"
+          id="file-upload"
+          type="file"
+          accept=".png, .jpg"
+          (change)="onUpload($event)"
+        />
+        Subir foto
+      </div>
+      <ion-icon
+        *ngIf="photo"
+        class="ion-padding"
+        slot="start"
+        name="close"
+        (click)="deletePhotos()"
+        >X</ion-icon
+      >
+      <ion-img
+        *ngIf="photo"
+        height="300px"
+        style="margin: 1rem"
+        [src]="photo"
+        (click)="showImage(photo)"
+      ></ion-img>
+
+      <div
+        *ngFor="let photo of photos; index as position"
+        style="border-bottom: 1px solid #e9dfdf"
+      >
+        <ion-icon
+          class="ion-padding"
+          slot="start"
+          name="close"
+          (click)="deletePhotos()"
+          >X</ion-icon
+        >
+        <ion-img
+          style="margin: 1rem"
+          height="300px"
+          [src]="photo.webviewPath"
+          (click)="showImage(photo.webviewPath)"
+        ></ion-img>
+      </div>
+    </div>
+
     <app-unicorn></app-unicorn>
   </div>
 </ion-content>

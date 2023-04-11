@@ -62,16 +62,5 @@
 </div>
 
 <div class="rainbow-container">
-  <ion-button (click)="openCamera()"
-    >Pulsa aquí &nbsp;<ion-icon name="camera"></ion-icon>
-  </ion-button>
   <div class="rainbow"></div>
 </div>
-
-<ion-grid>
-  <ion-row>
-    <ion-col size="6" *ngFor="let photo of photos; index as position">
-      <ion-img [src]="photo.webviewPath"></ion-img>
-    </ion-col>
-  </ion-row>
-</ion-grid>

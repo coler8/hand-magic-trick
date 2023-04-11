@@ -50,6 +50,210 @@ body {
   overflow-x: hidden;
 }
 
+.bg {
+  position: relative;
+
+  .clouds {
+    .cloud {
+      z-index: -1;
+      position: absolute;
+      @include box(120px, 20px);
+      background-color: $white-cloud;
+      border-radius: 10px;
+      transform: scale(0.6);
+      box-shadow: 0 20px $white-cloud, 0 40px $white-cloud, 0 60px $white-cloud,
+        0 80px $white-cloud;
+
+      &::after {
+        @include ps();
+        @include box(80px, 20px);
+        top: 20px;
+        left: -30px;
+        background-color: $blue-bg;
+        border-radius: 10px;
+        box-shadow: 100px 0 $blue-bg, -20px 40px $blue-bg, 80px 40px $blue-bg;
+      }
+
+      &.alt {
+        &::before {
+          @include ps();
+          @include box(40px, 20px);
+          background-color: $white-cloud;
+          right: -55px;
+          border-radius: 10px;
+        }
+      }
+
+      &.bot {
+        transform: scale(1, -1) scale(0.6);
+      }
+    }
+
+    :nth-child(1) {
+      top: 30px;
+      left: -20%;
+      animation: clouds 6s linear infinite;
+    }
+
+    :nth-child(2) {
+      top: 450px;
+      left: -60%;
+      animation: clouds 7s linear infinite;
+      z-index: -2;
+    }
+  }
+
+  .stars {
+    position: relative;
+
+    :nth-child(1) {
+      top: 30px;
+      left: 20%;
+      animation: star1 5s linear infinite;
+    }
+
+    :nth-child(2) {
+      top: 90px;
+      left: 70%;
+      animation: star2 5s 2s linear infinite alternate;
+    }
+
+    :nth-child(3) {
+      top: 240px;
+      left: 10%;
+      animation: star1 5s 1.3s ease-in infinite;
+    }
+
+    :nth-child(4) {
+      top: 220px;
+      left: 80%;
+      animation: star1 5.5s 2.1s ease-out infinite;
+    }
+
+    :nth-child(5) {
+      top: 320px;
+      left: 15%;
+      animation: star1 5.5s 2.1s ease-out infinite alternate;
+    }
+
+    :nth-child(6) {
+      top: 380px;
+      left: 85%;
+      animation: star1 4s linear infinite;
+    }
+
+    :nth-child(7) {
+      top: 500px;
+      left: 5%;
+      animation: star2 4.8s linear infinite alternate;
+    }
+
+    :nth-child(8) {
+      top: 520px;
+      left: 90%;
+      animation: star2 5s 1s linear infinite;
+    }
+
+    :nth-child(9) {
+      top: 220px;
+      left: 30%;
+      animation: star2 5s 4s linear infinite;
+    }
+
+    :nth-child(10) {
+      top: 70px;
+      left: 92%;
+      animation: star2 5.5s 0.3s ease-in-out alternate infinite;
+    }
+
+    .star {
+      position: absolute;
+      @include box(6px, 20px);
+      background-color: $yellow-star;
+      border-radius: 3px;
+
+      &::after {
+        @include ps;
+        @include box(6px, 20px);
+        background-color: $yellow-star;
+        border-radius: 3px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .planets {
+    position: relative;
+
+    :nth-child(1) {
+      top: 130px;
+      left: 20%;
+      animation: planet1 5s linear infinite;
+    }
+
+    :nth-child(2) {
+      top: 190px;
+      left: 70%;
+      animation: planet1 5s 0.6s linear infinite alternate;
+    }
+
+    :nth-child(3) {
+      top: 140px;
+      left: 1%;
+      animation: planet1 4.8s 0.5s linear infinite;
+    }
+
+    :nth-child(4) {
+      top: 320px;
+      left: 90%;
+      animation: planet1 4.8s 0.2s ease-in infinite alternate;
+    }
+
+    :nth-child(5) {
+      top: 220px;
+      left: 18%;
+      animation: planet1 4.8s 0.8s ease-in infinite;
+    }
+
+    :nth-child(6) {
+      top: 20px;
+      left: 85%;
+      animation: planet1 5s 1.8s ease-in infinite;
+    }
+
+    :nth-child(7) {
+      top: 450px;
+      left: 32%;
+      animation: planet1 6s ease-in infinite;
+    }
+
+    :nth-child(8) {
+      top: 490px;
+      left: 80%;
+      animation: planet1 5.5s ease-in infinite;
+    }
+
+    :nth-child(9) {
+      top: 5px;
+      left: 50%;
+      animation: planet1 4.8s 1s ease-in infinite alternate;
+    }
+
+    :nth-child(10) {
+      top: 25px;
+      left: 5%;
+      animation: planet1 4s 0.7s ease-out infinite;
+    }
+
+    .planet {
+      position: absolute;
+      @include box(6px, 6px);
+      background-color: #fafafa;
+      border-radius: 3px;
+    }
+  }
+}
+
 .unicorn-container {
   display: flex;
   justify-content: center;
@@ -405,210 +609,6 @@ body {
           transparent 40%
         );
       animation: rotate linear infinite 2.5s;
-    }
-  }
-}
-
-.bg {
-  position: relative;
-
-  .clouds {
-    .cloud {
-      z-index: -1;
-      position: absolute;
-      @include box(120px, 20px);
-      background-color: $white-cloud;
-      border-radius: 10px;
-      transform: scale(0.6);
-      box-shadow: 0 20px $white-cloud, 0 40px $white-cloud, 0 60px $white-cloud,
-        0 80px $white-cloud;
-
-      &::after {
-        @include ps();
-        @include box(80px, 20px);
-        top: 20px;
-        left: -30px;
-        background-color: $blue-bg;
-        border-radius: 10px;
-        box-shadow: 100px 0 $blue-bg, -20px 40px $blue-bg, 80px 40px $blue-bg;
-      }
-
-      &.alt {
-        &::before {
-          @include ps();
-          @include box(40px, 20px);
-          background-color: $white-cloud;
-          right: -55px;
-          border-radius: 10px;
-        }
-      }
-
-      &.bot {
-        transform: scale(1, -1) scale(0.6);
-      }
-    }
-
-    :nth-child(1) {
-      top: 30px;
-      left: -20%;
-      animation: clouds 6s linear infinite;
-    }
-
-    :nth-child(2) {
-      top: 450px;
-      left: -60%;
-      animation: clouds 7s linear infinite;
-      z-index: -2;
-    }
-  }
-
-  .stars {
-    position: relative;
-
-    :nth-child(1) {
-      top: 30px;
-      left: 20%;
-      animation: star1 5s linear infinite;
-    }
-
-    :nth-child(2) {
-      top: 90px;
-      left: 70%;
-      animation: star2 5s 2s linear infinite alternate;
-    }
-
-    :nth-child(3) {
-      top: 240px;
-      left: 10%;
-      animation: star1 5s 1.3s ease-in infinite;
-    }
-
-    :nth-child(4) {
-      top: 220px;
-      left: 80%;
-      animation: star1 5.5s 2.1s ease-out infinite;
-    }
-
-    :nth-child(5) {
-      top: 320px;
-      left: 15%;
-      animation: star1 5.5s 2.1s ease-out infinite alternate;
-    }
-
-    :nth-child(6) {
-      top: 380px;
-      left: 85%;
-      animation: star1 4s linear infinite;
-    }
-
-    :nth-child(7) {
-      top: 500px;
-      left: 5%;
-      animation: star2 4.8s linear infinite alternate;
-    }
-
-    :nth-child(8) {
-      top: 520px;
-      left: 90%;
-      animation: star2 5s 1s linear infinite;
-    }
-
-    :nth-child(9) {
-      top: 220px;
-      left: 30%;
-      animation: star2 5s 4s linear infinite;
-    }
-
-    :nth-child(10) {
-      top: 70px;
-      left: 92%;
-      animation: star2 5.5s 0.3s ease-in-out alternate infinite;
-    }
-
-    .star {
-      position: absolute;
-      @include box(6px, 20px);
-      background-color: $yellow-star;
-      border-radius: 3px;
-
-      &::after {
-        @include ps;
-        @include box(6px, 20px);
-        background-color: $yellow-star;
-        border-radius: 3px;
-        transform: rotate(90deg);
-      }
-    }
-  }
-
-  .planets {
-    position: relative;
-
-    :nth-child(1) {
-      top: 130px;
-      left: 20%;
-      animation: planet1 5s linear infinite;
-    }
-
-    :nth-child(2) {
-      top: 190px;
-      left: 70%;
-      animation: planet1 5s 0.6s linear infinite alternate;
-    }
-
-    :nth-child(3) {
-      top: 140px;
-      left: 1%;
-      animation: planet1 4.8s 0.5s linear infinite;
-    }
-
-    :nth-child(4) {
-      top: 320px;
-      left: 90%;
-      animation: planet1 4.8s 0.2s ease-in infinite alternate;
-    }
-
-    :nth-child(5) {
-      top: 220px;
-      left: 18%;
-      animation: planet1 4.8s 0.8s ease-in infinite;
-    }
-
-    :nth-child(6) {
-      top: 20px;
-      left: 85%;
-      animation: planet1 5s 1.8s ease-in infinite;
-    }
-
-    :nth-child(7) {
-      top: 450px;
-      left: 32%;
-      animation: planet1 6s ease-in infinite;
-    }
-
-    :nth-child(8) {
-      top: 490px;
-      left: 80%;
-      animation: planet1 5.5s ease-in infinite;
-    }
-
-    :nth-child(9) {
-      top: 5px;
-      left: 50%;
-      animation: planet1 4.8s 1s ease-in infinite alternate;
-    }
-
-    :nth-child(10) {
-      top: 25px;
-      left: 5%;
-      animation: planet1 4s 0.7s ease-out infinite;
-    }
-
-    .planet {
-      position: absolute;
-      @include box(6px, 6px);
-      background-color: #fafafa;
-      border-radius: 3px;
     }
   }
 }
