@@ -10,7 +10,7 @@
 
     <ion-img src="assets/rabbit.gif" (click)="showConfetti()"></ion-img>
 
-    <div
+    <section
       style="
         border-top: 1px solid rgb(194, 182, 182);
         border-bottom: 1px solid rgb(177, 169, 169);
@@ -67,8 +67,10 @@
           (click)="showImage(photo.webviewPath)"
         ></ion-img>
       </div>
-    </div>
+    </section>
 
-    <app-unicorn></app-unicorn>
+    <section>
+      <app-unicorn></app-unicorn>
+    </section>
   </div>
 </ion-content>
